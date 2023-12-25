@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign-up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            /* background-color: #fff; */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* background-image: url("https://th.bing.com/th/id/OIP.Zbv_dDhUQq7uy6pbsHTPLgHaEp?w=272&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7");
+            background-size: cover; */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+             <div class="form-group">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="login-username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="login-password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+
+        <div class="toggle-form">
+            <p>Don't have an account? <a href="#" id="toggle-signup">Sign up</a></p>
+        </div>
+
+        <h2>Sign-up</h2>
+        <form id="signup-form" style="display: none;">
+            <div class="form-group">
+                <label for="signup-fname">First Name</label>
+                <input type="text" id="signup-fname" name="signup-fname" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-lname">Last Name</label>
+                <input type="text" id="signup-lname" name="signup-lname" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Sign up</button>
+            </div>
+        </form>
+
+        <div class="toggle-form">
+            <p>Already have an account? <a href="#" id="toggle-login">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const toggleLogin = document.getElementById('toggle-login');
+        const toggleSignup = document.getElementById('toggle-signup');
+
+        toggleLogin.addEventListener('click', () => {
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+        });
+
+        toggleSignup.addEventListener('click', () => {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
